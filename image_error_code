@@ -1,7 +1,4 @@
-e10adc3949ba59abbe56e057f20f883e
-Sohel Mahroof
-
-
+test upload
 
 #RewriteEngine on
 #RewriteRule ^([a-z0-9_-]+)\.html$ index.php/page/$1 [L]
