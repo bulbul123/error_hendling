@@ -1,0 +1,53 @@
+install
+composer install laravel/laravel folderName --prefer-dist
+
+
+
+
+
+//create migrat table
+The syntax has changed to php artisan make:migration.
+Here are the available make commands.
+
+make:auth                    Create auth classes for the application
+make:console                 Create a new Artisan command
+make:controller              Create a new resource controller class
+make:filter                  Create a new route filter class
+make:migration               Create a new migration file
+make:provider                Create a new service provider class
+make:request                 Create a new form request class
+
+
+You might also be ineterested in the Laravel Generators package.
+To use it with Laravel 5, you'll need to require "way/generators": "~3.0"
+It gives you the following additional commands:
+
+generate:controller          Generate a controller
+generate:migration           Generate a new migration
+generate:model               Generate a model
+generate:pivot               Generate a pivot table
+generate:publish-templates   Copy generator templates for user modification
+generate:resource            Generate a new resource
+generate:scaffold            Scaffold a new resource (with boilerplate)
+generate:seed                Generate a database table seeder
+generate:view                Generate a view
+
+
+//into migrate file
+//up()
+Schema::create('tableName',function(Blueprint $table){
+$table->increments('id');
+$table->strint('title');
+$table->text('body');
+$table->integer('group_id');
+$table->integer('category_id');
+$table->timestamps();
+});
+
+
+//down()
+Schema::drop('tableName');
+
+
+//after create run migrate tables
+php artisan migrate
