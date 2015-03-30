@@ -1,6 +1,8 @@
 https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts
 For virtual domain create link with command
 
+//if need file remove then sudo rm bulbul.com.conf
+
 bulbul@bulbul-pc ~ $ cd /etc/apache2/sites-available/
 bulbul@bulbul-pc /etc/apache2/sites-available $ ls -la
 total 24
@@ -9,17 +11,24 @@ drwxr-xr-x 8 root root 4096 Jan 31 20:13 ..
 -rw-r--r-- 1 root root 1332 Jan  7  2014 000-default.conf
 -rw-r--r-- 1 root root 6437 Jan  7  2014 default-ssl.conf
 -rw-r--r-- 1 root root 1332 Feb  8 00:37 example.com.conf
-bulbul@bulbul-pc /etc/apache2/sites-available $ sudo touch geeft.dev.conf
+bulbul@bulbul-pc /etc/apache2/sites-available $ sudo touch geeft.dev.conf //for create file 
 [sudo] password for bulbul: 
-bulbul@bulbul-pc /etc/apache2/sites-available $ subl geeft.dev.conf 
-bulbul@bulbul-pc /etc/apache2/sites-available $ sudo subl geeft.dev.conf 
-bulbul@bulbul-pc /etc/apache2/sites-available $ sudo a2ensite geetf.dev.confERROR: Site geetf.dev does not exist!
-bulbul@bulbul-pc /etc/apache2/sites-available $ sudo a2ensite geetf.dev
-ERROR: Site geetf.dev does not exist!
-bulbul@bulbul-pc /etc/apache2/sites-available $ sudo a2ensite geeft.dev.conf
+
+bulbul@bulbul-pc /etc/apache2/sites-available $ sudo subl geeft.dev.conf //for open file
+
+bulbul@bulbul-pc /etc/apache2/sites-available $ sudo a2ensite geeft.dev.conf //for enable 
 Enabling site geeft.dev.
 To activate the new configuration, you need to run:
   service apache2 reload
 bulbul@bulbul-pc /etc/apache2/sites-available $ sudo service apache2 restart
  * Restarting web server apache2                                         [ OK ] 
 bulbul@bulbul-pc /etc/apache2/sites-available $ 
+
+
+//past this code into your file 
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/html/geeft
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>

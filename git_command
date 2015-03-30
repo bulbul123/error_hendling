@@ -1,0 +1,18 @@
+Git Profile Setup
+
+first time when create new ssk
+
+
+second time when already created
+git add .
+git commit -m 'initial commit'
+git push origin master
+
+
+
+compleate first time
+git init
+git remote add origin https://github.com/bulbul123/error_hendling.git
+git add .
+git commit -m 'initial commit'
+git push origin master

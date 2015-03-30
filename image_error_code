@@ -1,4 +1,10 @@
-test upload
+http://www.openstreetmap.org/search?query=Kishoreganj%20%2C%20Bangladesh#map=9/24.4171/90.8968
+https://www.google.com/maps/place/Kishoreganj,+Bangladesh/@24.3364627,90.916071,10z/data=!3m1!4b1!4m2!3m1!1s0x3756bd7d2a542a15:0x7c4e42ad0fc94226
+http://www.birdtheme.org/useful/v3tool.html
+http://en.wikipedia.org/wiki/List_of_districts_of_Bangladesh
+http://en.wikipedia.org/wiki/Divisions_of_Bangladesh
+
+
 
 #RewriteEngine on
 #RewriteRule ^([a-z0-9_-]+)\.html$ index.php/page/$1 [L]
@@ -36,8 +42,14 @@ _____________________________________________
 ->sudo chmod 7777 -R uploads/     	(fonlder-name)
 ->sudo service apache2 restart 
 
-
-
+________________________________________
+convert number bangla to english
+        <?php
+        $input='12';
+        $bn_digits=array('০','১','২','৩','৪','৫','৬','৭','৮','৯');
+        echo $output = str_replace(range(0, 9),$bn_digits, $input).''; 
+        ?>
+___________________________________________________________
 model function ar firlst positon a
 <?php $this->output->enable_profiler(TRUE);?>_
 or
